@@ -10,6 +10,7 @@ export class FamilyService {
       id: '0',
       name: 'Martyrs',
       description: "Actif: donne un bonus d'âmes",
+      icon: '../assets/icons/families/MartyrIcon.png',
       steps: [
         { nb: 2, bonus: 'Donne un bonus de 10 âmes' },
         { nb: 5, bonus: 'Donne un bonus de 30 âmes' },
@@ -19,12 +20,14 @@ export class FamilyService {
       id: '1',
       name: 'Vierges',
       description: 'Passif: converti des âmes tout les tours',
+      icon: '../assets/icons/families/ViergeIcon.png',
       steps: [{ nb: 3, bonus: 'Sauve 6 âmes par tour' }],
     },
     {
       id: '2',
       name: 'Apôtres',
       description: 'Passif: Baisse le prix des cartes',
+      icon: '../assets/icons/families/ApotreIcon.png',
       steps: [
         {
           nb: 2,
@@ -56,30 +59,35 @@ export class FamilyService {
       id: '3',
       name: 'Papes',
       description: '',
+      icon: '../assets/icons/families/PapeIcon.png',
       steps: [{ nb: 0, bonus: '' }],
     },
     {
       id: '4',
       name: "Docteurs de l'église",
       description: '',
+      icon: '../assets/icons/families/DocteurEgliseIcon.png',
       steps: [{ nb: 0, bonus: '' }],
     },
     {
       id: '5',
       name: 'Anges',
       description: '',
+      icon: '../assets/icons/families/AngeIcon.png',
       steps: [{ nb: 0, bonus: '' }],
     },
     {
       id: '6',
       name: 'Evangelistes',
       description: '',
+      icon: '../assets/icons/families/EvangelisteIcon.png',
       steps: [{ nb: 0, bonus: '' }],
     },
     {
       id: '7',
       name: 'Monarque',
       description: '',
+      icon: '../assets/icons/families/MonarqueIcon.png',
       steps: [{ nb: 0, bonus: '' }],
     },
   ];

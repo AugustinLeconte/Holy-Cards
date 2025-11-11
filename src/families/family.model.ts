@@ -2,6 +2,7 @@ export interface Family {
   id: string;
   name: string;
   description: string;
+  icon: string;
   steps: Array<{ nb: number; bonus: string }>;
 }
 

@@ -86,6 +86,10 @@
       border: solid 1px white;
       position: relative;
 
+      .img {
+        width: 80%;
+      }
+
       &:not(:first-child) {
         margin-top: -15px;
       }

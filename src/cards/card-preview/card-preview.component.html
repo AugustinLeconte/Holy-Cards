@@ -16,7 +16,7 @@
     </div>
     <div class="families">
       <div class="family" *ngFor="let family of card.families">
-        {{ familyService.getFamily(family).name }}
+        <img class="img" src="{{ familyService.getFamily(family).icon }}" />
       </div>
     </div>
 

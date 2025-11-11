@@ -7,7 +7,7 @@
     </div>
 
     <div class="family-content" [ngClass]="{ active: isActive(family) }">
-      {{ familyService.getFamily(family.id).name }}
+      <img class="img" src=" {{ familyService.getFamily(family.id).icon }}" />
     </div>
   </div>
 </div>
