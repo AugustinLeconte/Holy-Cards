@@ -18,7 +18,10 @@ export class GameService {
   terrainCards$ = this.terrainCards.asObservable();
   private inGameFamilies = new BehaviorSubject<Array<InGameFamily>>([]);
   inGameFamilies$ = this.inGameFamilies.asObservable();
-  private score = new BehaviorSubject<number>(0);
+  private score = new BehaviorSubject<{ score: number; maxScore: number }>({
+    score: 0,
+    maxScore: 200,
+  });
   score$ = this.score.asObservable();
 
   private gameState: string = '';
@@ -110,7 +113,10 @@ export class GameService {
       familiesPassiveBonus += family.passiveGain;
       familiesPassiveFire += family.passiveFire;
     });
-    this.score.next(this.score.value + familiesPassiveBonus);
+    this.score.next({
+      score: this.score.value.score + familiesPassiveBonus,
+      maxScore: this.score.value.maxScore,
+    });
     this.fireService.gain(this.turns.value.turnNb + familiesPassiveFire);
   }
 

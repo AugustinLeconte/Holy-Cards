@@ -14,35 +14,6 @@
   .family {
     cursor: pointer;
 
-    &:hover {
-      transform: scale(1, 1);
-
-      .hover-info {
-        visibility: visible;
-      }
-    }
-
-    .hover-info {
-      position: absolute;
-      visibility: hidden;
-      width: 100%;
-
-      .info {
-        text-align: center;
-        padding: 4px;
-        position: relative;
-        bottom: 34px;
-        display: flex;
-        border: solid 1px black;
-        background: lightgray;
-        border-radius: 15px;
-        width: 100%;
-        min-width: 100px;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
     .family-content {
       width: 30px;
       height: 30px;
@@ -62,5 +33,27 @@
         background-color: gray;
       }
     }
+
+    .steps {
+      position: relative;
+      margin-top: 2px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
   }
+}
+
+.tooltip {
+  position: fixed;
+  background: lightgray;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 4px 8px;
+  pointer-events: none;
+  z-index: 1000;
+  white-space: nowrap;
+  transition: opacity 0.1s;
 }

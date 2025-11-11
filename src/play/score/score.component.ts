@@ -11,14 +11,20 @@ import { GameService } from '../game.service';
 })
 export class ScoreComponent implements OnInit, OnDestroy {
   public score: number = 0;
+  public maxScore: number = 100;
   private scoreSubscription: Subscription | null = null;
 
   constructor(private gameService: GameService) {}
 
   ngOnInit(): void {
     this.scoreSubscription = this.gameService.score$.subscribe(
-      (score) => (this.score = score)
+      (score) => ((this.maxScore = score.maxScore), (this.score = score.score))
     );
+  }
+
+  getScoreWidth(): string {
+    const ratio = Math.min(this.score / this.maxScore, 1);
+    return `${ratio * 100}%`;
   }
 
   ngOnDestroy(): void {

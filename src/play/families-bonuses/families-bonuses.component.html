@@ -1,13 +1,26 @@
-<div class="families-bonuses" [ngClass]="{ enemy: isEnemy }">
-  <div class="family" *ngFor="let family of families">
-    <div class="hover-info" *ngIf="getFamilyStepDescription(family)">
-      <div class="info">
-        {{ getFamilyStepDescription(family) }} {{ family.passedSteps }}
-      </div>
-    </div>
-
+<div
+  class="families-bonuses"
+  [ngClass]="{ enemy: isEnemy }"
+  (mousemove)="onMouseMove($event)"
+>
+  <div
+    class="family"
+    *ngFor="let family of families"
+    (mouseenter)="showTooltip(getFamilyStepDescription(family))"
+    (mouseleave)="tooltipText = null"
+  >
     <div class="family-content" [ngClass]="{ active: isActive(family) }">
       <img class="img" src=" {{ familyService.getFamily(family.id).icon }}" />
     </div>
+    <div class="steps">{{ family.actualSteps }}{{ getNextStep(family) }}</div>
+  </div>
+
+  <div
+    class="tooltip"
+    *ngIf="tooltipText"
+    [style.top.px]="tooltipY"
+    [style.left.px]="tooltipX"
+  >
+    {{ tooltipText }}
   </div>
 </div>

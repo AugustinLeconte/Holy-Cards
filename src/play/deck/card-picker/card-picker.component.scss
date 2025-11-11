@@ -6,13 +6,13 @@
   border: solid 10px #cfcfcf;
   background: white;
   cursor: pointer;
-  bottom: calc(50% - 35vh);
-  left: -60px;
+  bottom: calc(50% - 40vh);
+  left: -120px;
   position: absolute;
   transform: rotate(90deg);
 
   &.enemy {
-    top: calc(50% - 33vh);
+    top: calc(50% - 40vh);
     height: 225px;
   }
 

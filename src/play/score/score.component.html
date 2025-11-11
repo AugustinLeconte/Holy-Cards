@@ -1,3 +1,5 @@
 <div class="score">
-  <div class="color" [ngStyle]="{ width: 'score' + 'px' }">{{ score }}</div>
+  <div class="color" [ngStyle]="{ width: getScoreWidth() }">
+    {{ score }}
+  </div>
 </div>

@@ -72,9 +72,15 @@ export class FamilyService {
     {
       id: '5',
       name: 'Anges',
-      description: '',
+      description: 'Serviteurs de Dieu depuis le commencement',
       icon: '../assets/icons/families/AngeIcon.png',
-      steps: [{ nb: 0, bonus: '' }],
+      steps: [
+        {
+          nb: 3,
+          bonus:
+            'La myriade des anges déferle sur la terre pour sauver des ames',
+        },
+      ],
     },
     {
       id: '6',
