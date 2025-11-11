@@ -1,0 +1,33 @@
+.game-turn {
+  position: absolute;
+  left: 8px;
+  top: calc(50vh - 12px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .turn-nb {
+    height: 40px;
+    width: 40px;
+    border: solid 1px black;
+    background: blue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .turn-msg {
+    color: black;
+  }
+}
+
+.enemyTurnBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(97vh + 4px);
+  width: calc(98vw + 2px);
+  border: solid 10px red;
+}

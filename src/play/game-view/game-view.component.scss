@@ -1,0 +1,21 @@
+.game-view {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+
+  &.enemy {
+    pointer-events: none;
+    align-items: flex-start;
+
+    .score {
+      bottom: calc(50% + 2vh);
+    }
+  }
+
+  .score {
+    position: absolute;
+    bottom: calc(50% - 8vh);
+    right: 80px;
+  }
+}

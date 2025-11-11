@@ -1,0 +1,12 @@
+<button (click)="navigateTo('')">Retour</button>
+
+<div *ngIf="!isLoading" class="list">
+  <div *ngIf="cards.length == 0">No cards</div>
+  <div *ngFor="let card of cards">
+    <card-preview [card]="card"></card-preview>
+  </div>
+</div>
+
+<div *ngIf="isLoading">
+  <!-- //TODO LOADING-->
+</div>

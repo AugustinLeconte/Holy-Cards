@@ -1,0 +1,22 @@
+.card-picker {
+  width: 150px;
+  aspect-ratio: 6 / 9;
+  border-radius: 15px;
+  transition: 0.5s ease;
+  border: solid 10px #cfcfcf;
+  background: white;
+  cursor: pointer;
+  bottom: calc(50% - 35vh);
+  left: -60px;
+  position: absolute;
+  transform: rotate(90deg);
+
+  &.enemy {
+    top: calc(50% - 33vh);
+    height: 225px;
+  }
+
+  &:hover {
+    border: solid 10px blue;
+  }
+}

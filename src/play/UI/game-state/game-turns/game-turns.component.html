@@ -1,0 +1,9 @@
+<div class="game-turn">
+  <div class="turn-nb">{{ turn }}</div>
+  <div class="turn-msg">
+    {{ turnMessage }}
+    <button (click)="endPlayerTurn()" *ngIf="!isEnemyTurn">Fin de tour</button>
+  </div>
+</div>
+
+<div class="enemyTurnBorder" *ngIf="isEnemyTurn"></div>

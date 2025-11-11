@@ -1,0 +1,5 @@
+<div class="mana-container" [ngClass]="{ enemy: isEnemy }">
+  <div class="mana">
+    <span>{{ fireService.fireCount$ | async }}</span>
+  </div>
+</div>

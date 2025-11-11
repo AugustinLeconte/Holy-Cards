@@ -1,0 +1,30 @@
+<div
+  class="card"
+  [style.background-image]="
+    isEnemy ? '' : 'url(assets/illustrations/' + card.illustration + ')'
+  "
+  [style.width]="inHand ? '100px' : '30vw'"
+  [ngClass]="isEnemy ? '' : 'level-' + card.level.toString()"
+>
+  <div *ngIf="!isEnemy">
+    <div class="external-elem">
+      <div class="cost stat">
+        <span>{{ card.baseCost }}</span>
+      </div>
+      <div class="damage stat">{{ card.baseDamage }}</div>
+      <div class="life stat">{{ card.baseHp }}</div>
+    </div>
+    <div class="families">
+      <div class="family" *ngFor="let family of card.families">
+        {{ familyService.getFamily(family).name }}
+      </div>
+    </div>
+
+    <div class="informations">
+      <div class="title" [ngClass]="card.type">{{ card.name }}</div>
+      <div class="description-container">
+        <div class="description">{{ card.description }}</div>
+      </div>
+    </div>
+  </div>
+</div>

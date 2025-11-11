@@ -1,0 +1,26 @@
+<div class="hand" [ngClass]="{ enemy: isEnemy }">
+  <card-preview
+    class="card-container"
+    [card]="card"
+    [isEnemy]="isEnemy"
+    [inHand]="true"
+    *ngFor="let card of cards; index as index"
+    (click)="selectedCardId = index"
+  ></card-preview>
+
+  <div *ngIf="selectedCardId != null" class="selected-card-modal">
+    <div class="selected-card-container">
+      <div class="header">
+        <button (click)="selectedCardId = null" class="close-btn">X</button>
+      </div>
+      <card-preview [card]="cards[selectedCardId]"></card-preview>
+      <button
+        class="play-card-btn"
+        (click)="putCardOnTerrain()"
+        [disabled]="!(cards[selectedCardId].cost <= fireCount)"
+      >
+        Poser
+      </button>
+    </div>
+  </div>
+</div>

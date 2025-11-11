@@ -1,0 +1,62 @@
+.families-bonuses {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  bottom: calc(50% - 8vh);
+  left: 25px;
+  height: 30px;
+  gap: 5px;
+
+  &.enemy {
+    bottom: calc(50% + 2vh);
+  }
+
+  .family {
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1, 1);
+
+      .hover-info {
+        visibility: visible;
+      }
+    }
+
+    .hover-info {
+      position: absolute;
+      visibility: hidden;
+      width: 100%;
+
+      .info {
+        text-align: center;
+        padding: 4px;
+        position: relative;
+        bottom: 34px;
+        display: flex;
+        border: solid 1px black;
+        background: lightgray;
+        border-radius: 15px;
+        width: 100%;
+        min-width: 100px;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .family-content {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: solid 1px black;
+      background: white;
+      border-radius: 50%;
+      overflow: hidden;
+
+      &.active {
+        background-color: gray;
+      }
+    }
+  }
+}

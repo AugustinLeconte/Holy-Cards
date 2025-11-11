@@ -1,0 +1,29 @@
+.mana-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: calc(50% - 8vh);
+  right: 25px;
+  justify-content: flex-start;
+  gap: 3px;
+  cursor: pointer;
+
+  &.enemy {
+    bottom: calc(50% + 2vh);
+  }
+
+  .mana {
+    transform: rotate(45deg);
+    border: black solid 1px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+
+    span {
+      transform: rotate(-45deg);
+    }
+  }
+}

@@ -1,0 +1,100 @@
+@import url("../../../cards/card-preview/card-preview.component.scss");
+
+.hand {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  position: absolute;
+  bottom: -55px;
+
+  &.enemy {
+    margin-bottom: 0px;
+    top: -55px;
+    bottom: unset;
+
+    .card {
+      border: solid 10px #cfcfcf;
+      background: white;
+    }
+  }
+
+  .card-container {
+    .card {
+      width: 100px !important;
+
+      &:hover {
+        bottom: 80px !important;
+      }
+
+      .families {
+        margin-left: 65%;
+      }
+    }
+  }
+}
+
+.selected-card-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0000008f;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .selected-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 60%;
+    align-items: center;
+    justify-content: space-between;
+
+    .header {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      .close-btn {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: white;
+        border: solid 1px black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    .play-card-btn {
+      height: 40px;
+      width: fit-content;
+      border-radius: 15px;
+      background-color: white;
+      border: solid 1px black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px 0 20px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}

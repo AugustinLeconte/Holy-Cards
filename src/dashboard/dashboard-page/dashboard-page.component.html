@@ -1,0 +1,14 @@
+<button (click)="navigateTo('cards-list')">Liste des cartes</button>
+
+<button (click)="showPlayMenu = true">Jouer</button>
+<div *ngIf="showPlayMenu">
+  <button (click)="showPlayMenu = false">Fermer</button>
+  <button (click)="navigateTo('game/offline'); showPlayMenu = false">
+    Jouer contre l'ordinateur
+  </button>
+  <button (click)="navigateTo('game/online'); showPlayMenu = false">
+    Jouer en ligne
+  </button>
+</div>
+
+<button (click)="navigateTo('saints')">A la découverte des saints</button>

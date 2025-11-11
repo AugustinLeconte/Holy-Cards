@@ -1,0 +1,183 @@
+.card {
+  position: relative;
+  width: 30vw;
+  min-width: 100px;
+  max-width: 200px;
+  aspect-ratio: 6 / 9;
+  border: solid 1px gray;
+  border-radius: 15px;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.5s ease;
+  border: solid 10px #cfcfcf;
+
+  &:hover {
+    transform: scale(1.1);
+    z-index: 2;
+  }
+
+  .informations {
+    position: absolute;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    align-items: center;
+    bottom: 10px;
+    margin-left: 5%;
+
+    .title {
+      border-bottom: solid 1px black;
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+      font-weight: bolder;
+      border-radius: 10px 10px 0px 0px;
+
+      &.legendary {
+        background-color: #ffff5db5;
+      }
+
+      &.mythic {
+        background-color: #bb42d9b5;
+      }
+
+      &.rare {
+        background-color: #454ddeb5;
+      }
+
+      &.commun {
+        background-color: #b3b3b3b5;
+      }
+    }
+
+    .description-container {
+      background-color: rgb(255 255 255 / 88%);
+      width: 100%;
+      font-size: 13px;
+      border-radius: 0px 0px 10px 10px;
+      height: 100%;
+
+      .description {
+        padding: 10px;
+      }
+    }
+  }
+
+  .families {
+    position: absolute;
+    margin-top: -12%;
+    margin-left: 82%;
+    display: flex;
+    flex-direction: column;
+
+    .family {
+      aspect-ratio: 1;
+      width: 30px;
+      background: white;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 25px;
+      border: solid 1px white;
+      position: relative;
+
+      &:not(:first-child) {
+        margin-top: -15px;
+      }
+    }
+  }
+
+  .external-elem {
+    position: relative;
+    left: -11%;
+    top: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 13px;
+
+    .stat {
+      max-width: 30px;
+      aspect-ratio: 1;
+      width: 20%;
+      border: solid 1px black;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.cost {
+        transform: rotate(45deg);
+
+        span {
+          transform: rotate(-45deg);
+        }
+      }
+
+      &.damage {
+        border-radius: 50%;
+        background: #e05f5f;
+      }
+
+      &.life {
+        background: rgb(104, 153, 104);
+      }
+    }
+
+    .combat-info {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+
+  &.level-0 {
+    border-color: #cfcfcf;
+  }
+
+  &.level-1 {
+    border-color: #353834;
+  }
+
+  &.level-2 {
+    border-color: #7cb969;
+  }
+
+  &.level-3 {
+    border-color: #4ab983;
+  }
+
+  &.level-4 {
+    border-color: #f15555;
+  }
+
+  &.level-5 {
+    border-color: #e99fad;
+  }
+
+  &.level-6 {
+    border-color: #0e1eb6;
+  }
+
+  &.level-7 {
+    border-color: #806adc;
+  }
+
+  &.level-8 {
+    border-color: #d253de;
+  }
+
+  &.level-9 {
+    border-color: #dfe5a0;
+  }
+
+  &.level-10 {
+    border-color: #fdfd00;
+  }
+}

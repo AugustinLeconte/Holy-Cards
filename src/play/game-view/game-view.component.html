@@ -1,0 +1,8 @@
+<section class="game-view" [ngClass]="{ enemy: isEnemy }">
+  <score class="score"></score>
+  <fire [isEnemy]="isEnemy"></fire>
+  <families-bonuses [isEnemy]="isEnemy"></families-bonuses>
+  <card-picker [isEnemy]="isEnemy"></card-picker>
+  <hand [isEnemy]="isEnemy"></hand>
+  <game-terrain></game-terrain>
+</section>

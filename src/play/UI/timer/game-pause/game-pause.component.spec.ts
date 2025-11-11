@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { GamePauseComponent } from './game-pause.component';
+
+describe('GamePauseComponent', () => {
+  let component: GamePauseComponent;
+  let fixture: ComponentFixture<GamePauseComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [GamePauseComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(GamePauseComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

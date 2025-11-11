@@ -1,0 +1,26 @@
+.entire-terrain {
+  position: absolute;
+  margin-top: 0px;
+  left: 1%;
+  width: 97%;
+  height: 45%;
+  background-color: rgb(218, 170, 79);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 5px;
+  z-index: -1;
+
+  .terrain-cards {
+    position: relative;
+    width: 74%;
+    height: 59%;
+    bottom: 31px;
+    border-radius: 15px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+  }
+}

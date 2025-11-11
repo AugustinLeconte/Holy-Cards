@@ -1,0 +1,14 @@
+.score {
+  border-radius: 15px;
+  width: 200px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+  overflow: hidden;
+
+  .color {
+    padding: 5px;
+    background: rgb(183 80 202 / 59%);
+  }
+}
