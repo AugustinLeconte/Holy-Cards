@@ -1,9 +1,11 @@
 <div
   *ngIf="flyingCard.card"
-  class="flying-card"
+  class="flying-card card"
   [style.left.px]="flyingCard.x"
   [style.top]="flyingCard.y"
   [ngClass]="{ 'mid-air': flyingCard.midAir }"
->
-  <img [src]="flyingCard.card.illustration" />
-</div>
+  [style.background-image]="
+    'url(assets/illustrations/' + flyingCard.card.illustration + ')'
+  "
+  [ngClass]="'level-' + flyingCard.card.level.toString()"
+></div>
