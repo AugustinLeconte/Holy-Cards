@@ -23,6 +23,8 @@ export class GameService {
     maxScore: 200,
   });
   score$ = this.score.asObservable();
+  private flyingCards = new BehaviorSubject<Card>({} as Card);
+  flyingCards$ = this.flyingCards.asObservable();
 
   private gameState: string = '';
   private gameStateSubscription!: Subscription;
@@ -59,7 +61,17 @@ export class GameService {
     this.gameStateService.setGameState('loading');
   }
 
+  private shuffleDeck(): void {
+    const array = this.deck.value;
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    this.deck.next(array);
+  }
+
   public startGame(): void {
+    this.shuffleDeck();
     this.turns.next({
       turnNb: 1,
       isPlayerTurn: this.chooseFirstPlayer(),
@@ -169,7 +181,12 @@ export class GameService {
   public pickCard(): void {
     //TODO => ANIMATION POUR L'AJOUT DES CARTES DANS LA MAIN
     const pickedCard: Card = this.deck.value.splice(0, 1)[0];
-    if (pickedCard) this.handedCards.value.push(pickedCard);
+    this.flyingCards.next(pickedCard);
+  }
+
+  public setCardToHand(card: Card): void {
+    if (card) this.handedCards.value.push(card);
+    this.flyingCards.next({} as Card);
   }
 
   public getHandedCards(): Array<Card> {

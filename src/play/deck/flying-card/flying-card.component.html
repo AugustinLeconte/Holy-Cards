@@ -1,0 +1,9 @@
+<div
+  *ngIf="flyingCard.card"
+  class="flying-card"
+  [style.left.px]="flyingCard.x"
+  [style.top]="flyingCard.y"
+  [ngClass]="{ 'mid-air': flyingCard.midAir }"
+>
+  <img [src]="flyingCard.card.illustration" />
+</div>

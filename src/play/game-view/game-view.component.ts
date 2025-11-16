@@ -7,6 +7,7 @@ import { FamiliesBonusesComponent } from '../families-bonuses/families-bonuses.c
 import { FireComponent } from '../fire/fire.component';
 import { GameTerrainComponent } from '../game-terrain/game-terrain.component';
 import { GameService } from '../game.service';
+import { FlyingCardComponent } from '../deck/flying-card/flying-card.component';
 
 @Component({
   selector: 'game-view',
@@ -18,6 +19,7 @@ import { GameService } from '../game.service';
     FamiliesBonusesComponent,
     FireComponent,
     GameTerrainComponent,
+    FlyingCardComponent,
   ],
   templateUrl: './game-view.component.html',
   styleUrl: './game-view.component.scss',
