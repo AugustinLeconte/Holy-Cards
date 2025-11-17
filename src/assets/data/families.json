@@ -32,27 +32,33 @@
     "steps": [
       {
         "nb": 2,
-        "bonus": "Baisse le prix de la prochaine carte de 1 tout les 3 tours"
+        "bonus": "Baisse le prix de la prochaine carte de 1 tout les 3 tours",
+        "passiveGain": 0
       },
       {
         "nb": 4,
-        "bonus": "Baisse le prix de la prochaine carte de 1 tout les 2 tours"
+        "bonus": "Baisse le prix de la prochaine carte de 1 tout les 2 tours",
+        "passiveGain": 0
       },
       {
         "nb": 6,
-        "bonus": "Baisse le prix de la prochaine carte de 2 tout les 2 tours"
+        "bonus": "Baisse le prix de la prochaine carte de 2 tout les 2 tours",
+        "passiveGain": 0
       },
       {
         "nb": 8,
-        "bonus": "Baisse le prix de la prochaine carte de 3 tout les tours"
+        "bonus": "Baisse le prix de la prochaine carte de 3 tout les tours",
+        "passiveGain": 0
       },
       {
         "nb": 10,
-        "bonus": "Baisse le prix de la prochaine carte de 4 tout les tours"
+        "bonus": "Baisse le prix de la prochaine carte de 4 tout les tours",
+        "passiveGain": 0
       },
       {
         "nb": 12,
-        "bonus": "Tout les tours, la première carte piochée est gratuite"
+        "bonus": "Tout les tours, la première carte piochée est gratuite",
+        "passiveGain": 0
       }
     ]
   },
@@ -95,5 +101,18 @@
     "description": "",
     "icon": "../assets/icons/families/MonarqueIcon.png",
     "steps": [{ "nb": 0, "bonus": "" }]
+  },
+  {
+    "id": "8",
+    "name": "Mere-Fils",
+    "description": "Passif: lien privilégié. 'Fils voici ta Mère, Mère voici ton fils'",
+    "icon": "../assets/icons/families/",
+    "steps": [
+      {
+        "nb": 2,
+        "bonus": "Passif: lien privilégié. 'Fils voici ta Mère, Mère voici ton fils'. Si Marie et Jean sont sur le terrain gagnent 10 ames et 1 feu par tour",
+        "passiveGain": 10
+      }
+    ]
   }
 ]
