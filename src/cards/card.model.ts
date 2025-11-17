@@ -8,8 +8,8 @@ export interface Card {
   families: Array<string>;
   baseCost: number;
   cost: number;
-  baseDamage: number;
-  damage: number;
   baseHp: number;
   hp: number;
+  passiveGain: { description: string; fire: number; points: number };
+  activeGain: { description: string; fire: number; points: number };
 }

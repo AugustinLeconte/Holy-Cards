@@ -9,10 +9,10 @@
     "families": ["1"],
     "baseCost": 10,
     "cost": 10,
-    "baseDamage": 0,
-    "damage": 0,
     "baseHp": 0,
-    "hp": 0
+    "hp": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
     "id": "000-0000-0001",
@@ -24,10 +24,10 @@
     "families": ["5"],
     "baseCost": 8,
     "cost": 8,
-    "baseDamage": 0,
-    "damage": 0,
     "baseHp": 0,
-    "hp": 0
+    "hp": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
     "id": "000-0000-0001",
@@ -37,12 +37,16 @@
     "type": "mythic",
     "level": 8,
     "families": ["2", "6"],
-    "baseCost": 4,
-    "cost": 4,
-    "baseDamage": 0,
-    "damage": 0,
-    "baseHp": 0,
-    "hp": 0
+    "baseCost": 9,
+    "cost": 9,
+    "baseHp": 4,
+    "hp": 4,
+    "activeGain": {
+      "description": "Repos sur le coeur de Jésus",
+      "fire": 5,
+      "points": 0
+    },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
     "id": "000-0000-0001",
@@ -54,10 +58,10 @@
     "families": [],
     "baseCost": 0,
     "cost": 0,
-    "baseDamage": 0,
-    "damage": 0,
     "baseHp": 0,
-    "hp": 0
+    "hp": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
     "id": "000-0000-0001",
@@ -69,10 +73,10 @@
     "families": ["7"],
     "baseCost": 0,
     "cost": 0,
-    "baseDamage": 0,
-    "damage": 0,
     "baseHp": 0,
-    "hp": 0
+    "hp": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
     "id": "000-0000-0001",
@@ -84,10 +88,10 @@
     "families": ["2", "0"],
     "baseCost": 0,
     "cost": 0,
-    "baseDamage": 0,
-    "damage": 0,
     "baseHp": 0,
-    "hp": 0
+    "hp": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
     "id": "000-0000-0001",
@@ -99,10 +103,10 @@
     "families": ["2", "3", "0"],
     "baseCost": 0,
     "cost": 0,
-    "baseDamage": 0,
-    "damage": 0,
     "baseHp": 0,
-    "hp": 0
+    "hp": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
     "id": "000-0000-0001",
@@ -114,10 +118,10 @@
     "families": ["2", "0"],
     "baseCost": 0,
     "cost": 0,
-    "baseDamage": 0,
-    "damage": 0,
     "baseHp": 0,
-    "hp": 0
+    "hp": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
     "id": "000-0000-0001",
@@ -129,10 +133,10 @@
     "families": ["2", "6", "0"],
     "baseCost": 0,
     "cost": 0,
-    "baseDamage": 0,
-    "damage": 0,
     "baseHp": 0,
-    "hp": 0
+    "hp": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
     "id": "000-0000-0001",
@@ -144,10 +148,10 @@
     "families": ["2", "0"],
     "baseCost": 0,
     "cost": 0,
-    "baseDamage": 0,
-    "damage": 0,
     "baseHp": 0,
-    "hp": 0
+    "hp": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
     "id": "000-0000-0001",
@@ -159,9 +163,9 @@
     "families": ["2", "0"],
     "baseCost": 0,
     "cost": 0,
-    "baseDamage": 0,
-    "damage": 0,
     "baseHp": 0,
-    "hp": 0
+    "hp": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
   }
 ]

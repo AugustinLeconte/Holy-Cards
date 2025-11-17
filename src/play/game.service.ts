@@ -113,8 +113,24 @@ export class GameService {
 
   private startNewRound() {
     this.getFamiliesBonuses();
+    this.getCardsPassiveBonuses();
     //TODO => ICI VOIR SI LA CARTE A UN COUT + BAS;
     this.pickCard();
+  }
+
+  private getCardsPassiveBonuses() {
+    let cardsPassiveBonus: number = 0;
+    let cardsPassiveFire: number = 0;
+    this.handedCards.value.forEach((card) => {
+      //if (card.isActive) {} //TODO => A RAJOUTER AVANT
+      cardsPassiveBonus += card.passiveGain.points;
+      cardsPassiveFire += card.passiveGain.fire;
+    });
+    this.score.next({
+      score: this.score.value.score + cardsPassiveBonus,
+      maxScore: this.score.value.maxScore,
+    });
+    this.fireService.gain(this.turns.value.turnNb + cardsPassiveFire);
   }
 
   private getFamiliesBonuses(): void {
@@ -136,6 +152,12 @@ export class GameService {
     const playedCard = this.handedCards.value.splice(index, 1)[0];
     this.terrainCards.value.push(playedCard);
     this.fireService.pay(playedCard.cost);
+    this.fireService.gain(playedCard.activeGain.fire);
+    this.score.next({
+      //TODO => remplacer par un autre service
+      score: this.score.value.score + playedCard.activeGain.points,
+      maxScore: this.score.value.maxScore,
+    });
     this.addFamilyBonus(playedCard);
   }
 
