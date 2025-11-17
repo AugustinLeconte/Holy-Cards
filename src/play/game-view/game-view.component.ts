@@ -19,7 +19,6 @@ import { FlyingCardComponent } from '../deck/flying-card/flying-card.component';
     FamiliesBonusesComponent,
     FireComponent,
     GameTerrainComponent,
-    FlyingCardComponent,
   ],
   templateUrl: './game-view.component.html',
   styleUrl: './game-view.component.scss',

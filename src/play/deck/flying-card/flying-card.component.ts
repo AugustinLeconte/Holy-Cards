@@ -1,6 +1,6 @@
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { Card } from '../../../cards/card.model';
-import { Subscription } from 'rxjs';
+import { distinctUntilChanged, Subscription, take } from 'rxjs';
 import { GameService } from '../../game.service';
 import { CommonModule } from '@angular/common';
 
@@ -30,15 +30,15 @@ export class FlyingCardComponent {
   constructor(private gameService: GameService) {}
 
   ngOnInit() {
-    this.flyingCardSubscription = this.gameService.flyingCards$.subscribe(
-      (flyingCard) => {
+    this.flyingCardSubscription = this.gameService.flyingCards$
+      .pipe(distinctUntilChanged((a, b) => a?.id === b?.id))
+      .subscribe((flyingCard) => {
         if (flyingCard.id) {
           this.flyingCard.card = flyingCard;
           console.log('INIT');
           this.pickCard();
         }
-      }
-    );
+      });
   }
 
   ngOnDestroy(): void {

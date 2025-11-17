@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { GameViewComponent } from '../game-view/game-view.component';
 import { GameCtrElementsComponent } from '../UI/game-ctr-elements/game-ctr-elements.component';
+import { FlyingCardComponent } from '../deck/flying-card/flying-card.component';
 
 @Component({
   selector: 'app-game-board',
-  imports: [GameViewComponent, GameCtrElementsComponent],
+  imports: [GameViewComponent, GameCtrElementsComponent, FlyingCardComponent],
   templateUrl: './game-board.component.html',
   styleUrl: './game-board.component.scss',
 })
