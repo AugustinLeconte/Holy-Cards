@@ -26,7 +26,6 @@ export class GameTimerService {
 
   public play(): void {
     if (this.timeSubscription) return;
-    console.log('play');
 
     this.timeSubscription = interval(1)
       .pipe(
@@ -34,7 +33,6 @@ export class GameTimerService {
         takeUntil(this.timer$.pipe(map((v) => v <= 0)))
       )
       .subscribe((value) => {
-        console.log(this.timeLeft);
         this.timer$.next(value);
       });
   }

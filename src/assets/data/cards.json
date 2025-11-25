@@ -8,10 +8,7 @@
     "level": 10,
     "families": ["1", "8"],
     "baseCost": 10,
-    "cost": 10,
     "baseHp": 0,
-    "hp": 0,
-    "shield": 0,
     "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
@@ -24,10 +21,8 @@
     "level": 9,
     "families": ["5"],
     "baseCost": 8,
-    "cost": 8,
+
     "baseHp": 0,
-    "hp": 0,
-    "shield": 0,
     "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
@@ -40,10 +35,8 @@
     "level": 8,
     "families": ["2", "6", "8"],
     "baseCost": 9,
-    "cost": 9,
+
     "baseHp": 4,
-    "hp": 4,
-    "shield": 0,
     "activeGain": {
       "description": "Repos sur le coeur de Jésus",
       "fire": 5,
@@ -61,28 +54,32 @@
     "level": 6,
     "families": ["7"],
     "baseCost": 0,
-    "cost": 0,
+
     "baseHp": 0,
-    "hp": 0,
-    "shield": 0,
     "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
-    "id": "000-0000-0001",
+    "id": "000-0000-1001",
     "illustration": "StPaul.jpg",
     "name": "Paul",
-    "description": "Apotre des païens",
+    "description": "Apotre des nations",
     "type": "mythic",
-    "level": 5,
+    "level": 0,
     "families": ["2", "0"],
-    "baseCost": 0,
-    "cost": 0,
-    "baseHp": 0,
-    "hp": 0,
-    "shield": 0,
-    "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
-    "passiveGain": { "description": "", "fire": 0, "points": 0 }
+    "baseCost": 8,
+    "baseHp": 6,
+    "activeGain": {
+      "description": "Missions diverses",
+      "fire": 0,
+      "points": 5,
+      "shield": 0
+    },
+    "passiveGain": {
+      "description": "Lettres aux nations. Les cartes à sa droite et à sa gauche voient leur bonus passif doublé",
+      "fire": 0,
+      "points": 0
+    }
   },
   {
     "id": "000-0000-0001",
@@ -93,10 +90,8 @@
     "level": 4,
     "families": ["2", "3", "0"],
     "baseCost": 0,
-    "cost": 0,
+
     "baseHp": 0,
-    "hp": 0,
-    "shield": 0,
     "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
@@ -109,10 +104,8 @@
     "level": 3,
     "families": ["2", "0"],
     "baseCost": 0,
-    "cost": 0,
+
     "baseHp": 0,
-    "hp": 0,
-    "shield": 0,
     "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
@@ -125,10 +118,8 @@
     "level": 2,
     "families": ["2", "6", "0"],
     "baseCost": 0,
-    "cost": 0,
+
     "baseHp": 0,
-    "hp": 0,
-    "shield": 0,
     "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
@@ -141,10 +132,8 @@
     "level": 1,
     "families": ["2", "0"],
     "baseCost": 0,
-    "cost": 0,
+
     "baseHp": 0,
-    "hp": 0,
-    "shield": 0,
     "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
@@ -157,10 +146,8 @@
     "level": 0,
     "families": ["2", "0"],
     "baseCost": 0,
-    "cost": 0,
+
     "baseHp": 0,
-    "hp": 0,
-    "shield": 0,
     "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
@@ -173,10 +160,8 @@
     "level": 0,
     "families": ["0"],
     "baseCost": 1,
-    "cost": 1,
+
     "baseHp": 2,
-    "hp": 2,
-    "shield": 0,
     "activeGain": {
       "description": "Gagne un bouclier a sa pose sur le terrain",
       "fire": 0,
@@ -194,10 +179,7 @@
     "level": 0,
     "families": ["0"],
     "baseCost": 1,
-    "cost": 1,
     "baseHp": 2,
-    "hp": 2,
-    "shield": 0,
     "activeGain": {
       "description": "Convertit 5 ames",
       "fire": 0,
@@ -205,5 +187,81 @@
       "shield": 0
     },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
+  },
+  {
+    "id": "000-0000-0000",
+    "illustration": "StSebastien.jpg",
+    "name": "Sebastien",
+    "description": "Patron des soldats",
+    "type": "commun",
+    "level": 0,
+    "families": ["0"],
+    "baseCost": 1,
+    "baseHp": 2,
+    "activeGain": {
+      "description": "Convertit 5 ames",
+      "fire": 0,
+      "points": 5,
+      "shield": 0
+    },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
+  },
+  {
+    "id": "000-0000-0000",
+    "illustration": "SteDorothee.jpg",
+    "name": "Dorothée",
+    "description": "Vierge et Martyr",
+    "type": "base",
+    "level": 0,
+    "families": ["0", "1"],
+    "baseCost": 2,
+    "baseHp": 4,
+    "activeGain": {
+      "description": "Convertit 3 ames et transmet le feu du martyr",
+      "fire": 1,
+      "points": 3,
+      "shield": 0
+    },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
+  },
+  {
+    "id": "000-0000-0000",
+    "illustration": "SteMargueriteAntioche.jpg",
+    "name": "Marguerite d'Antioche",
+    "description": "Protectrice des femmes enceintes",
+    "type": "base",
+    "level": 0,
+    "families": ["0", "1"],
+    "baseCost": 2,
+    "baseHp": 4,
+    "activeGain": {
+      "description": "Sauvée des entrailles du démon",
+      "fire": 0,
+      "points": 0,
+      "shield": 1
+    },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
+  },
+  {
+    "id": "000-0000-0000",
+    "illustration": "SteMereTeresa.jpg",
+    "name": "Mère Teresa",
+    "description": "Vierge missionaire",
+    "type": "commun",
+    "level": 0,
+    "families": ["1"],
+    "baseCost": 1,
+    "baseHp": 2,
+    "activeGain": {
+      "description": "Prix Nobel de la Paix",
+      "fire": 0,
+      "points": 1,
+      "shield": 0
+    },
+    "passiveGain": {
+      "description": "Oeuvre missionaire",
+      "fire": 0,
+      "points": 2
+    }
   }
 ]

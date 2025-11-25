@@ -1,5 +1,5 @@
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
-import { Card } from '../../../cards/card.model';
+import { Card, InGameCard } from '../../../cards/card.model';
 import { distinctUntilChanged, Subscription, take } from 'rxjs';
 import { GameService } from '../../game.service';
 import { CommonModule } from '@angular/common';
@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FlyingCardComponent {
   public flyingCard: {
-    card: Card | null;
+    card: InGameCard | null;
     x: number;
     y: string;
     midAir: boolean;
@@ -35,7 +35,6 @@ export class FlyingCardComponent {
       .subscribe((flyingCard) => {
         if (flyingCard.id) {
           this.flyingCard.card = flyingCard;
-          console.log('INIT');
           this.pickCard();
         }
       });

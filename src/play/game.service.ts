@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Card } from '../cards/card.model';
+import { InGameCard } from '../cards/card.model';
 import { CardService } from '../cards/card.service';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { GameStateService } from './game-state.service';
@@ -11,11 +11,11 @@ import { FamilyService } from '../families/family.service';
   providedIn: 'root',
 })
 export class GameService {
-  private deck = new BehaviorSubject<Array<Card>>([]);
+  private deck = new BehaviorSubject<Array<InGameCard>>([]);
   deck$ = this.deck.asObservable();
-  private handedCards = new BehaviorSubject<Array<Card>>([]);
+  private handedCards = new BehaviorSubject<Array<InGameCard>>([]);
   handedCards$ = this.handedCards.asObservable();
-  private terrainCards = new BehaviorSubject<Array<Card>>([]);
+  private terrainCards = new BehaviorSubject<Array<InGameCard>>([]);
   terrainCards$ = this.terrainCards.asObservable();
   private inGameFamilies = new BehaviorSubject<Array<InGameFamily>>([]);
   inGameFamilies$ = this.inGameFamilies.asObservable();
@@ -24,7 +24,7 @@ export class GameService {
     maxScore: 200,
   });
   score$ = this.score.asObservable();
-  private flyingCards = new BehaviorSubject<Card>({} as Card);
+  private flyingCards = new BehaviorSubject<InGameCard>({} as InGameCard);
   flyingCards$ = this.flyingCards.asObservable();
 
   private gameState: string = '';
@@ -123,10 +123,15 @@ export class GameService {
   private getCardsPassiveBonuses() {
     let cardsPassiveBonus: number = 0;
     let cardsPassiveFire: number = 0;
-    this.handedCards.value.forEach((card) => {
-      //if (card.isActive) {} //TODO => A RAJOUTER AVANT
-      cardsPassiveBonus += card.passiveGain.points;
-      cardsPassiveFire += card.passiveGain.fire;
+    this.terrainCards.value.forEach((card) => {
+      if (card.isActive) {
+        cardsPassiveBonus += card.isBoosted
+          ? card.passiveGain.points * 2
+          : card.passiveGain.points;
+        cardsPassiveFire += card.isBoosted
+          ? card.passiveGain.fire * 2
+          : card.passiveGain.fire;
+      }
     });
     this.score.next({
       score: this.score.value.score + cardsPassiveBonus,
@@ -154,7 +159,8 @@ export class GameService {
     let playedCard = this.handedCards.value.splice(index, 1)[0];
     playedCard.shield += playedCard.activeGain.shield;
     this.terrainCards.value.push(playedCard);
-    this.playCardSpecialActiveAction();
+    this.playCardSpecialActiveAction(playedCard);
+    this.playCardSpecialPassiveAction();
     this.fireService.pay(playedCard.cost);
     this.fireService.gain(playedCard.activeGain.fire);
     this.score.next({
@@ -165,9 +171,53 @@ export class GameService {
     this.addFamilyBonus(playedCard);
   }
 
-  private playCardSpecialActiveAction() {}
+  private playCardSpecialActiveAction(playedCard: InGameCard) {
+    switch (playedCard.id) {
+      default:
+        break;
+    }
+  }
 
-  public addFamilyBonus(playedCard: Card) {
+  private playCardSpecialPassiveAction() {
+    for (let playedCard of this.terrainCards.value) {
+      switch (playedCard.id) {
+        case '000-0000-1001':
+          this.applyBoostToAdjacentCards(playedCard);
+          break;
+        default:
+          break;
+      }
+    }
+  }
+
+  private applyBoostToAdjacentCards(playedCard: InGameCard) {
+    const cards = [...this.terrainCards.value];
+    const index = cards.findIndex((c) => c.id === playedCard.id);
+
+    console.log(index);
+
+    if (index === -1) return;
+
+    if (cards[index - 1]) {
+      cards[index - 1] = {
+        ...cards[index - 1],
+        isBoosted:
+          cards[index + 1].passiveGain.description != '' ? true : false,
+      };
+    }
+
+    if (cards[index + 1]) {
+      cards[index + 1] = {
+        ...cards[index + 1],
+        isBoosted:
+          cards[index + 1].passiveGain.description != '' ? true : false,
+      };
+    }
+
+    this.terrainCards.next(cards);
+  }
+
+  public addFamilyBonus(playedCard: InGameCard) {
     playedCard.families.forEach((familyId) => {
       const newFamilyStats = this.familyService.getFamily(familyId);
       const index = this.inGameFamilies.value.findIndex(
@@ -219,22 +269,22 @@ export class GameService {
     this.inGameFamilies.next(newInGameFamily);
   }
 
-  public getDeck(): Array<Card> {
+  public getDeck(): Array<InGameCard> {
     return this.deck.value;
   }
 
   public pickCard(): void {
     //TODO => ANIMATION POUR L'AJOUT DES CARTES DANS LA MAIN
-    const pickedCard: Card = this.deck.value.splice(0, 1)[0];
+    const pickedCard: InGameCard = this.deck.value.splice(0, 1)[0];
     this.flyingCards.next(pickedCard);
   }
 
-  public setCardToHand(card: Card): void {
+  public setCardToHand(card: InGameCard): void {
     if (card) this.handedCards.value.push(card);
-    this.flyingCards.next({} as Card);
+    this.flyingCards.next({} as InGameCard);
   }
 
-  public getHandedCards(): Array<Card> {
+  public getHandedCards(): Array<InGameCard> {
     return this.handedCards.value;
   }
 

@@ -28,6 +28,16 @@
     border-radius: 50%;
   }
 
+  .boost {
+    position: absolute;
+    background: rgba(255, 86, 20, 0.43);
+    width: 118px;
+    height: 170px;
+    margin-top: -32px;
+    margin-left: -10px;
+    border-radius: 10%;
+  }
+
   .informations {
     position: absolute;
     width: 90%;
@@ -58,6 +68,10 @@
 
       &.rare {
         background-color: #454ddeb5;
+      }
+
+      &.base {
+        background-color: #008e07b5;
       }
 
       &.commun {

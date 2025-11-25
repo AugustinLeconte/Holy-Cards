@@ -7,10 +7,7 @@ export interface Card {
   level: number;
   families: Array<string>;
   baseCost: number;
-  cost: number;
   baseHp: number;
-  hp: number;
-  shield: number;
   passiveGain: {
     description: string;
     fire: number;
@@ -22,4 +19,12 @@ export interface Card {
     points: number;
     shield: number;
   };
+}
+
+export interface InGameCard extends Card {
+  isBoosted: boolean;
+  cost: number;
+  hp: number;
+  shield: number;
+  isActive: boolean;
 }

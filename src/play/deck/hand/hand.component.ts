@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Card } from '../../../cards/card.model';
+import { InGameCard } from '../../../cards/card.model';
 import { GameService } from '../../game.service';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
@@ -14,7 +14,7 @@ import { FireService } from '../../fire/fire.service';
 })
 export class HandComponent implements OnInit, OnDestroy {
   @Input() public isEnemy: boolean = false;
-  public cards: Array<Card> = [];
+  public cards: Array<InGameCard> = [];
   public fireCount: number = 0;
   private cardsSubscription: Subscription | null = null;
   private fireSubscription: Subscription | null = null;

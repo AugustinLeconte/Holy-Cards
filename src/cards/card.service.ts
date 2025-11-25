@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Card } from './card.model';
+import { Card, InGameCard } from './card.model';
 import cardsData from '../assets/data/cards.json';
 
 @Injectable({
@@ -11,7 +11,14 @@ export class CardService {
 
   constructor(private http: HttpClient) {}
 
-  getCards() {
-    return this.saintList;
+  getCards(): InGameCard[] {
+    return this.saintList.map((card) => ({
+      ...card,
+      isBoosted: false,
+      cost: card.baseCost,
+      hp: card.baseHp,
+      shield: 0,
+      isActive: true,
+    }));
   }
 }

@@ -63,5 +63,6 @@
       </div>
     </div>
   </div>
-  <div *ngIf="card.shield > 0" class="shield"></div>
+  <div *ngIf="isInGameCard(card) && card.shield > 0" class="shield"></div>
+  <div *ngIf="isInGameCard(card) && card.isBoosted" class="boost"></div>
 </div>
