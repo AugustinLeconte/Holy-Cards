@@ -11,7 +11,8 @@
     "cost": 10,
     "baseHp": 0,
     "hp": 0,
-    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "shield": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
@@ -26,7 +27,8 @@
     "cost": 8,
     "baseHp": 0,
     "hp": 0,
-    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "shield": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
@@ -41,26 +43,13 @@
     "cost": 9,
     "baseHp": 4,
     "hp": 4,
+    "shield": 0,
     "activeGain": {
       "description": "Repos sur le coeur de Jésus",
       "fire": 5,
-      "points": 0
+      "points": 0,
+      "shield": 0
     },
-    "passiveGain": { "description": "", "fire": 0, "points": 0 }
-  },
-  {
-    "id": "000-0000-0001",
-    "illustration": "StFrancoisAssise.jpg",
-    "name": "St François d Assise",
-    "description": "Ami des bêtes",
-    "type": "rare",
-    "level": 7,
-    "families": [],
-    "baseCost": 0,
-    "cost": 0,
-    "baseHp": 0,
-    "hp": 0,
-    "activeGain": { "description": "", "fire": 0, "points": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
@@ -75,7 +64,8 @@
     "cost": 0,
     "baseHp": 0,
     "hp": 0,
-    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "shield": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
@@ -90,7 +80,8 @@
     "cost": 0,
     "baseHp": 0,
     "hp": 0,
-    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "shield": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
@@ -105,7 +96,8 @@
     "cost": 0,
     "baseHp": 0,
     "hp": 0,
-    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "shield": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
@@ -120,7 +112,8 @@
     "cost": 0,
     "baseHp": 0,
     "hp": 0,
-    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "shield": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
@@ -135,7 +128,8 @@
     "cost": 0,
     "baseHp": 0,
     "hp": 0,
-    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "shield": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
@@ -150,7 +144,8 @@
     "cost": 0,
     "baseHp": 0,
     "hp": 0,
-    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "shield": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   },
   {
@@ -165,7 +160,50 @@
     "cost": 0,
     "baseHp": 0,
     "hp": 0,
-    "activeGain": { "description": "", "fire": 0, "points": 0 },
+    "shield": 0,
+    "activeGain": { "description": "", "fire": 0, "points": 0, "shield": 0 },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
+  },
+  {
+    "id": "000-0000-0000",
+    "illustration": "StGeorges.jpg",
+    "name": "Georges",
+    "description": "Combattant le dragon",
+    "type": "commun",
+    "level": 0,
+    "families": ["0"],
+    "baseCost": 1,
+    "cost": 1,
+    "baseHp": 2,
+    "hp": 2,
+    "shield": 0,
+    "activeGain": {
+      "description": "Gagne un bouclier a sa pose sur le terrain",
+      "fire": 0,
+      "points": 0,
+      "shield": 1
+    },
+    "passiveGain": { "description": "", "fire": 0, "points": 0 }
+  },
+  {
+    "id": "000-0000-0000",
+    "illustration": "StTheophaneVenard.jpg",
+    "name": "Theophane Venard",
+    "description": "Martyr au Tonquin",
+    "type": "commun",
+    "level": 0,
+    "families": ["0"],
+    "baseCost": 1,
+    "cost": 1,
+    "baseHp": 2,
+    "hp": 2,
+    "shield": 0,
+    "activeGain": {
+      "description": "Convertit 5 ames",
+      "fire": 0,
+      "points": 5,
+      "shield": 0
+    },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
   }
 ]

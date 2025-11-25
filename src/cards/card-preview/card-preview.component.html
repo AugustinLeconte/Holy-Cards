@@ -22,7 +22,7 @@
     <div class="informations">
       <div class="title" [ngClass]="card.type">{{ card.name }}</div>
       <div class="description-container">
-        <div class="description">{{ card.description }}</div>
+        <div class="description" *ngIf="!inHand">{{ card.description }}</div>
         <div
           class="description active-bonus"
           *ngIf="card.activeGain.description != ''"
@@ -36,6 +36,16 @@
           >
           <span *ngIf="card.activeGain.points != 0"
             >{{ card.activeGain.points }} P</span
+          >
+          <span
+            *ngIf="
+              (card.activeGain.points != 0 && card.activeGain.shield != 0) ||
+              (card.activeGain.fire != 0 && card.activeGain.shield != 0)
+            "
+            >,</span
+          >
+          <span *ngIf="card.activeGain.shield != 0"
+            >{{ card.activeGain.shield }} S</span
           >
         </div>
         <div class="passive-bonus" *ngIf="card.passiveGain.description != ''">
@@ -53,4 +63,5 @@
       </div>
     </div>
   </div>
+  <div *ngIf="card.shield > 0" class="shield"></div>
 </div>

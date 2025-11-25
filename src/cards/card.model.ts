@@ -10,6 +10,16 @@ export interface Card {
   cost: number;
   baseHp: number;
   hp: number;
-  passiveGain: { description: string; fire: number; points: number };
-  activeGain: { description: string; fire: number; points: number };
+  shield: number;
+  passiveGain: {
+    description: string;
+    fire: number;
+    points: number;
+  };
+  activeGain: {
+    description: string;
+    fire: number;
+    points: number;
+    shield: number;
+  };
 }

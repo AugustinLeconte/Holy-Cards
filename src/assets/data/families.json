@@ -8,12 +8,26 @@
       {
         "nb": 2,
         "bonus": "ACTIF: Donne un bonus de 10 âmes",
-        "passiveGain": 10
+        "passiveGain": 0,
+        "activeGain": 10,
+        "color": "",
+        "passiveFire": 0
       },
       {
         "nb": 5,
         "bonus": "ACTIF: Donne un bonus de 30 âmes",
-        "passiveGain": 30
+        "passiveGain": 0,
+        "activeGain": 30,
+        "color": "",
+        "passiveFire": 0
+      },
+      {
+        "nb": 8,
+        "bonus": "ACTIF: Donne un bonus de 50 âmes",
+        "passiveGain": 0,
+        "activeGain": 50,
+        "color": "",
+        "passiveFire": 0
       }
     ]
   },
@@ -22,7 +36,16 @@
     "name": "Vierges",
     "description": "Passif: converti des âmes tout les tours",
     "icon": "../assets/icons/families/ViergeIcon.png",
-    "steps": [{ "nb": 3, "bonus": "Sauve 6 âmes par tour" }]
+    "steps": [
+      {
+        "nb": 3,
+        "bonus": "Sauve 6 âmes par tour",
+        "passiveGain": 0,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
+      }
+    ]
   },
   {
     "id": "2",
@@ -33,32 +56,50 @@
       {
         "nb": 2,
         "bonus": "Baisse le prix de la prochaine carte de 1 tout les 3 tours",
-        "passiveGain": 0
+        "passiveGain": 0,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
       },
       {
         "nb": 4,
         "bonus": "Baisse le prix de la prochaine carte de 1 tout les 2 tours",
-        "passiveGain": 0
+        "passiveGain": 0,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
       },
       {
         "nb": 6,
         "bonus": "Baisse le prix de la prochaine carte de 2 tout les 2 tours",
-        "passiveGain": 0
+        "passiveGain": 0,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
       },
       {
         "nb": 8,
         "bonus": "Baisse le prix de la prochaine carte de 3 tout les tours",
-        "passiveGain": 0
+        "passiveGain": 0,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
       },
       {
         "nb": 10,
         "bonus": "Baisse le prix de la prochaine carte de 4 tout les tours",
-        "passiveGain": 0
+        "passiveGain": 0,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
       },
       {
         "nb": 12,
         "bonus": "Tout les tours, la première carte piochée est gratuite",
-        "passiveGain": 0
+        "passiveGain": 0,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
       }
     ]
   },
@@ -67,14 +108,32 @@
     "name": "Papes",
     "description": "",
     "icon": "../assets/icons/families/PapeIcon.png",
-    "steps": [{ "nb": 0, "bonus": "" }]
+    "steps": [
+      {
+        "nb": 0,
+        "bonus": "",
+        "passiveGain": 0,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
+      }
+    ]
   },
   {
     "id": "4",
     "name": "Docteurs de l'église",
     "description": "",
     "icon": "../assets/icons/families/DocteurEgliseIcon.png",
-    "steps": [{ "nb": 0, "bonus": "" }]
+    "steps": [
+      {
+        "nb": 0,
+        "bonus": "",
+        "passiveGain": 0,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
+      }
+    ]
   },
   {
     "id": "5",
@@ -84,7 +143,11 @@
     "steps": [
       {
         "nb": 3,
-        "bonus": "La myriade des anges déferle sur la terre pour sauver des âmes"
+        "bonus": "La myriade des anges déferle sur la terre pour sauver des âmes",
+        "passiveGain": 0,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
       }
     ]
   },
@@ -93,14 +156,32 @@
     "name": "Evangelistes",
     "description": "",
     "icon": "../assets/icons/families/EvangelisteIcon.png",
-    "steps": [{ "nb": 0, "bonus": "" }]
+    "steps": [
+      {
+        "nb": 0,
+        "bonus": "",
+        "passiveGain": 0,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
+      }
+    ]
   },
   {
     "id": "7",
     "name": "Monarque",
     "description": "",
     "icon": "../assets/icons/families/MonarqueIcon.png",
-    "steps": [{ "nb": 0, "bonus": "" }]
+    "steps": [
+      {
+        "nb": 0,
+        "bonus": "",
+        "passiveGain": 0,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
+      }
+    ]
   },
   {
     "id": "8",
@@ -111,7 +192,10 @@
       {
         "nb": 2,
         "bonus": "Passif: lien privilégié. 'Fils voici ta Mère, Mère voici ton fils'. Si Marie et Jean sont sur le terrain gagnent 10 ames et 1 feu par tour",
-        "passiveGain": 10
+        "passiveGain": 10,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 1
       }
     ]
   }

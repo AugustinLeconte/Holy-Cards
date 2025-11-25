@@ -3,7 +3,14 @@ export interface Family {
   name: string;
   description: string;
   icon: string;
-  steps: Array<{ nb: number; bonus: string }>;
+  steps: Array<{
+    nb: number;
+    bonus: string;
+    passiveGain: number;
+    activeGain: number;
+    passiveFire: number;
+    color: string;
+  }>;
 }
 
 export interface InGameFamily {

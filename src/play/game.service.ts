@@ -5,6 +5,7 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 import { GameStateService } from './game-state.service';
 import { FireService } from './fire/fire.service';
 import { InGameFamily } from '../families/family.model';
+import { FamilyService } from '../families/family.service';
 
 @Injectable({
   providedIn: 'root',
@@ -45,9 +46,11 @@ export class GameService {
   constructor(
     private cardService: CardService,
     private gameStateService: GameStateService,
-    private fireService: FireService
+    private fireService: FireService,
+    private familyService: FamilyService
   ) {
     this.deck.next(this.cardService.getCards());
+    this.shuffleDeck();
     this.handedCards.next(this.deck.value.splice(0, 3));
   }
 
@@ -71,7 +74,6 @@ export class GameService {
   }
 
   public startGame(): void {
-    this.shuffleDeck();
     this.turns.next({
       turnNb: 1,
       isPlayerTurn: this.chooseFirstPlayer(),
@@ -149,8 +151,10 @@ export class GameService {
   }
 
   public putCardOnTerrain(index: number) {
-    const playedCard = this.handedCards.value.splice(index, 1)[0];
+    let playedCard = this.handedCards.value.splice(index, 1)[0];
+    playedCard.shield += playedCard.activeGain.shield;
     this.terrainCards.value.push(playedCard);
+    this.playCardSpecialActiveAction();
     this.fireService.pay(playedCard.cost);
     this.fireService.gain(playedCard.activeGain.fire);
     this.score.next({
@@ -161,8 +165,11 @@ export class GameService {
     this.addFamilyBonus(playedCard);
   }
 
+  private playCardSpecialActiveAction() {}
+
   public addFamilyBonus(playedCard: Card) {
     playedCard.families.forEach((familyId) => {
+      const newFamilyStats = this.familyService.getFamily(familyId);
       const index = this.inGameFamilies.value.findIndex(
         (inGameFamily) => inGameFamily.id == familyId
       );
@@ -170,15 +177,31 @@ export class GameService {
       if (index >= 0) {
         let newInGameFamily = this.inGameFamilies.value;
         newInGameFamily[index].actualSteps += 1;
+        for (const family of newFamilyStats.steps) {
+          if (
+            newInGameFamily[index].actualSteps === family.nb &&
+            newInGameFamily[index].passedSteps < family.nb
+          ) {
+            newInGameFamily[index].passedSteps = family.nb;
+            this.score.next({
+              score: this.score.value.score + family.activeGain,
+              maxScore: this.score.value.maxScore,
+            });
+            newInGameFamily[index].passiveGain = family.passiveGain;
+            newInGameFamily[index].passiveFire = family.passiveFire;
+            newInGameFamily[index].activeGain = family.activeGain;
+            break;
+          }
+        }
         this.inGameFamilies.next(newInGameFamily);
       } else {
         this.inGameFamilies.value.push({
           id: familyId,
           actualSteps: 1, //TODO => RENOMMER CA EN NB_CARDS
           passedSteps: 0, //TODO => PASSER TOUT CA DANS LES STEPS DES FAMILLES PAR DEFAUT, GARDER LES PASSIFS
-          passiveGain: 1,
-          activeGain: 0,
-          passiveFire: 0,
+          passiveGain: newFamilyStats.steps[0].passiveGain,
+          activeGain: newFamilyStats.steps[0].activeGain,
+          passiveFire: newFamilyStats.steps[0].passiveFire,
           //TODO => AJOUTER UN IS_ACTIVE
         });
       }
