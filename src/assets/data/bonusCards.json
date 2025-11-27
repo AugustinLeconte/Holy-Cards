@@ -1,0 +1,46 @@
+[
+  {
+    "id": "0",
+    "illustration": "SteCouronne.jpg",
+    "name": "Couronne d'épines",
+    "description": "Couronne portée par Jésus lors de sa passion",
+    "type": "legendary",
+    "level": 0,
+    "families": [],
+    "baseCost": 2,
+    "baseHp": 0,
+    "activeGain": {
+      "description": "",
+      "fire": 0,
+      "points": 0,
+      "shield": 0
+    },
+    "passiveGain": {
+      "description": "Exposition au public",
+      "fire": 0,
+      "points": 2
+    }
+  },
+  {
+    "id": "1",
+    "illustration": "ReliqueVraieCroix.jpg",
+    "name": "Morceau de la vraie croix",
+    "description": "Bois de la croix sur laquelle Jésus fut crucifié",
+    "type": "legendary",
+    "level": 0,
+    "families": [],
+    "baseCost": 1,
+    "baseHp": 0,
+    "activeGain": {
+      "description": "",
+      "fire": 0,
+      "points": 0,
+      "shield": 0
+    },
+    "passiveGain": {
+      "description": "Exposition au public",
+      "fire": 0,
+      "points": 1
+    }
+  }
+]

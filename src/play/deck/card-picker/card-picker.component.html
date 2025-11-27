@@ -1,5 +1,3 @@
-<div
-  class="card-picker"
-  [ngClass]="{ enemy: isEnemy }"
-  (click)="pickCard()"
-></div>
+<div class="card-picker" [ngClass]="{ enemy: isEnemy }" (click)="pickCard()">
+  {{ cards.length }}
+</div>

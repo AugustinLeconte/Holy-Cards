@@ -173,6 +173,14 @@ export class GameService {
 
   private playCardSpecialActiveAction(playedCard: InGameCard) {
     switch (playedCard.id) {
+      case '000-0000-1002':
+        this.addCardsInDeck(this.cardService.getSpecialCardsWithId(['0']));
+        break;
+      case '000-0000-1003':
+        this.addCardsInDeck(this.cardService.getSpecialCardsWithId(['1']));
+        this.addCardsInDeck(this.cardService.getSpecialCardsWithId(['1']));
+        this.addCardsInDeck(this.cardService.getSpecialCardsWithId(['1']));
+        break;
       default:
         break;
     }
@@ -188,6 +196,17 @@ export class GameService {
           break;
       }
     }
+  }
+
+  private addCardsInDeck(cards: InGameCard[]): void {
+    const deck = [...this.deck.value];
+
+    cards.forEach((card) => {
+      const idx = Math.floor(Math.random() * (deck.length + 1));
+      deck.splice(0, 0, card);
+    });
+
+    this.deck.next(deck);
   }
 
   private applyBoostToAdjacentCards(playedCard: InGameCard) {

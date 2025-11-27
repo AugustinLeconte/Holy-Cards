@@ -1,7 +1,7 @@
 [
   {
     "id": "000-0000-0001",
-    "illustration": "SteMarie.jpeg",
+    "illustration": "SteMarie.jpg",
     "name": "Sainte Marie",
     "description": "Mère de Dieu",
     "type": "legendary",
@@ -66,7 +66,7 @@
     "description": "Apotre des nations",
     "type": "mythic",
     "level": 0,
-    "families": ["2", "0"],
+    "families": ["0", "2"],
     "baseCost": 8,
     "baseHp": 6,
     "activeGain": {
@@ -83,7 +83,7 @@
   },
   {
     "id": "000-0000-0001",
-    "illustration": "StPierre.jpeg",
+    "illustration": "StPierre.jpg",
     "name": "Pierre",
     "description": "Premier pape",
     "type": "mythic",
@@ -97,7 +97,7 @@
   },
   {
     "id": "000-0000-0001",
-    "illustration": "StJacques.jpeg",
+    "illustration": "StJacques.jpg",
     "name": "Jacques",
     "description": "",
     "type": "mythic",
@@ -139,7 +139,7 @@
   },
   {
     "id": "000-0000-0001",
-    "illustration": "StSimonZelote.jpeg",
+    "illustration": "StSimonZelote.jpg",
     "name": "Simon le Zélote",
     "description": "",
     "type": "mythic",
@@ -181,9 +181,9 @@
     "baseCost": 1,
     "baseHp": 2,
     "activeGain": {
-      "description": "Convertit 5 ames",
+      "description": "Convertit 3 ames",
       "fire": 0,
-      "points": 5,
+      "points": 3,
       "shield": 0
     },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
@@ -199,9 +199,9 @@
     "baseCost": 1,
     "baseHp": 2,
     "activeGain": {
-      "description": "Convertit 5 ames",
+      "description": "Convertit 3 ames",
       "fire": 0,
-      "points": 5,
+      "points": 3,
       "shield": 0
     },
     "passiveGain": { "description": "", "fire": 0, "points": 0 }
@@ -262,6 +262,138 @@
       "description": "Oeuvre missionaire",
       "fire": 0,
       "points": 2
+    }
+  },
+  {
+    "id": "000-0000-0000",
+    "illustration": "StPieX.jpg",
+    "name": "Pie X",
+    "description": "Pape de L'eucharistie",
+    "type": "commun",
+    "level": 0,
+    "families": ["3"],
+    "baseCost": 1,
+    "baseHp": 2,
+    "activeGain": {
+      "description": "",
+      "fire": 0,
+      "points": 0,
+      "shield": 0
+    },
+    "passiveGain": {
+      "description": "Restauration de l'Eglise dans le monde",
+      "fire": 0,
+      "points": 1
+    }
+  },
+  {
+    "id": "000-0000-0000",
+    "illustration": "StJeanXXIII.jpg",
+    "name": "Jean XXIII",
+    "description": "Pape de la bonté",
+    "type": "commun",
+    "level": 0,
+    "families": ["3"],
+    "baseCost": 1,
+    "baseHp": 2,
+    "activeGain": {
+      "description": "",
+      "fire": 0,
+      "points": 0,
+      "shield": 0
+    },
+    "passiveGain": {
+      "description": "Lancement de Vatican II",
+      "fire": 0,
+      "points": 1
+    }
+  },
+  {
+    "id": "000-0000-0000",
+    "illustration": "StPaulVI.jpg",
+    "name": "Paul VI",
+    "description": "Le pape de Vatican II",
+    "type": "commun",
+    "level": 0,
+    "families": ["3"],
+    "baseCost": 2,
+    "baseHp": 2,
+    "activeGain": {
+      "description": "Fin de concile",
+      "fire": 1,
+      "points": 0,
+      "shield": 0
+    },
+    "passiveGain": {
+      "description": "Appel à la paix et l'unité",
+      "fire": 0,
+      "points": 1
+    }
+  },
+  {
+    "id": "000-0000-0000",
+    "illustration": "StJeanPaulII.jpg",
+    "name": "Jean Paul II",
+    "description": "L'apotre de la divine Miséricorde",
+    "type": "commun",
+    "level": 0,
+    "families": ["3"],
+    "baseCost": 2,
+    "baseHp": 3,
+    "activeGain": {
+      "description": "Journées mondiales de la jeunesse",
+      "fire": 1,
+      "points": 3,
+      "shield": 0
+    },
+    "passiveGain": {
+      "description": "",
+      "fire": 0,
+      "points": 0
+    }
+  },
+  {
+    "id": "000-0000-1002",
+    "illustration": "StLouisIX.jpg",
+    "name": "Louis IX",
+    "description": "Saint roi de France",
+    "type": "commun",
+    "level": 0,
+    "families": ["7"],
+    "baseCost": 1,
+    "baseHp": 2,
+    "activeGain": {
+      "description": "Retour de Croisade",
+      "fire": 1,
+      "points": 0,
+      "shield": 0
+    },
+    "passiveGain": {
+      "description": "",
+      "fire": 0,
+      "points": 0
+    }
+  },
+  {
+    "id": "000-0000-1002",
+    "illustration": "SteHelene.jpg",
+    "name": "Helène",
+    "description": "Mère de l'empereur Constantin",
+    "type": "commun",
+    "level": 0,
+    "families": ["7"],
+    "baseCost": 2,
+    "baseHp": 2,
+    "activeGain": {
+      "description": "Découverte de la vraie croix",
+      "fire": 0,
+      "points": 0,
+      "shield": 1
+    },
+    "passiveGain": {
+      "description": "",
+      "fire": 0,
+      "points": 0
     }
   }
 ]

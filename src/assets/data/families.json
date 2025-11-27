@@ -106,13 +106,29 @@
   {
     "id": "3",
     "name": "Papes",
-    "description": "",
+    "description": "Trone de Pierre, chargés de donner une direction à l'Eglise dans les troubles de l'histoire",
     "icon": "../assets/icons/families/PapeIcon.png",
     "steps": [
       {
-        "nb": 0,
-        "bonus": "",
-        "passiveGain": 0,
+        "nb": 2,
+        "bonus": "PASSIF: A travers leurs enseignements sauve 2 âmes",
+        "passiveGain": 2,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
+      },
+      {
+        "nb": 4,
+        "bonus": "PASSIF: A travers leurs enseignements sauve 4 âmes",
+        "passiveGain": 4,
+        "activeGain": 0,
+        "color": "",
+        "passiveFire": 0
+      },
+      {
+        "nb": 5,
+        "bonus": "PASSIF: A travers leurs enseignements sauve 8 âmes",
+        "passiveGain": 8,
         "activeGain": 0,
         "color": "",
         "passiveFire": 0
