@@ -187,15 +187,38 @@ export class GameService {
   }
 
   private playCardSpecialPassiveAction() {
-    for (let playedCard of this.terrainCards.value) {
-      switch (playedCard.id) {
+    const updatedCards = this.terrainCards.value.map((card) => {
+      const updatedCard = { ...card };
+
+      switch (updatedCard.id) {
         case '000-0000-1001':
-          this.applyBoostToAdjacentCards(playedCard);
+          this.applyBoostToAdjacentCards(updatedCard);
           break;
-        default:
+
+        case '000-0000-1004':
+          updatedCard.passiveGain.points = this.addCardPointsFromFamilies(
+            ['2', '3'],
+            updatedCard.id
+          );
           break;
       }
+
+      return updatedCard;
+    });
+
+    this.terrainCards.next(updatedCards);
+  }
+
+  private addCardPointsFromFamilies(familyList: string[], cardId: string) {
+    let points: number = 0;
+    for (let card of this.terrainCards.value) {
+      if (
+        card.families.some((f) => familyList.includes(f)) &&
+        card.id != cardId
+      )
+        points += 1;
     }
+    return points;
   }
 
   private addCardsInDeck(cards: InGameCard[]): void {
